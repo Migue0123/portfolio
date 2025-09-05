@@ -1,0 +1,227 @@
+@font-face {
+  font-family: "Nunito";
+  src: url("./public/fonts/nunito-variable.woff") format("woff");
+}
+@font-face {
+  font-family: "Rubik";
+  src: url("./public/fonts/rubik-variable.woff") format("woff");
+}
+
+/* TODO: Implementar variables de color */
+:root {
+  font-family: "Nunito", "Rubik", sans-serif;
+
+  --background-color: 25, 26, 25;
+  --font-color-white: 210, 210, 210;
+  --font-color-dark: 13, 13, 13;
+  --font-color-grey: 34, 35, 34;
+  --font-color-sky: 105, 192, 192;
+  --link-color: #ffffff;
+  --background-menu-color: rgba(var(--font-color-white), 24%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(var(--background-color));
+  /* background: -webkit-linear-gradient(90deg, #0f1116, #1a1b22);
+  background: linear-gradient(90deg, #0f1116, #1a1b22); */
+  color: rgb(var(--font-color-white));
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 50%;
+  padding: 20px;
+}
+
+.bio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+  column-gap: 40px;
+
+  .bio-image {
+    width: 180px;
+    height: 180px;
+    filter: drop-shadow(0 0 20px #6e5e5e80);
+    mask-image: linear-gradient(black 60%, transparent);
+    border-radius: 100%;
+    background-color: rgb(var(--font-color-sky));
+
+    &[alt] {
+      text-align: center;
+    }
+  }
+
+  .bio-description {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2.5rem;
+      font-weight: 700;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: rgb(var(--font-color-sky));
+    }
+    p {
+      font-size: 1.1rem;
+      font-weight: 200;
+      max-width: 600px;
+      line-height: 1.5;
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .available {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    margin-top: 12px;
+    width: fit-content;
+    font-size: 0.8rem;
+    padding: 2px 6px;
+    border-radius: 5px;
+    border: 1px solid rgba(var(--font-color-white), 0.2);
+    background-color: transparent;
+    .status-point {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #9bd36f;
+    }
+  }
+
+  .bio-links {
+    margin-top: 20px;
+    display: flex;
+    column-gap: 24px;
+
+    .icon {
+      position: relative;
+      width: 28px;
+      height: 28px;
+      color: rgb(var(--font-color-white));
+
+      &:hover {
+        color: rgb(var(--font-color-sky));
+      }
+    }
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+
+  .card {
+    position: relative;
+    border-radius: 4px;
+    border: 1.5px solid rgba(var(--font-color-white), 0.2);
+    background-color: rgb(var(--font-color-white), 10%);
+    backdrop-filter: blur(10px);
+    min-height: 200px;
+    transition: all 0.6s ease;
+
+    .icon-card {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      cursor: pointer;
+      transition: all 0.6s ease;
+    }
+
+    &:hover .icon-card {
+      transform: scale(2);
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  position: fixed;
+  left: 50%;
+  bottom: 4%;
+  transform: translateX(-50%);
+  width: fit-content;
+  height: 60px;
+  z-index: 1000;
+  padding: 12px 30px;
+  border: 1.5px solid rgba(var(--font-color-white), 0.2);
+  border-radius: 20px;
+  background-color: rgb(var(--font-color-white), 0);
+  backdrop-filter: blur(10px);
+  transition: all 0.6s ease;
+
+  &:hover {
+    transform: translateX(-50%) scale(1.05);
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+    column-gap: 20px;
+    position: relative;
+
+    button {
+      background-color: rgb(var(--font-color-white), 20%);
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 100%;
+      transition: all 0.6s ease;
+    }
+
+    button:hover {
+      transform: scale(1.2);
+      translate: 0px -15px;
+    }
+
+    button::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: -70%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgb(var(--font-color-grey));
+      color: rgb(var(--font-color-white));
+      padding: 5px 10px;
+      border: 1px solid rgba(var(--font-color-white), 0.2);
+      border-radius: 5px;
+      font-size: 0.8rem;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    button:hover::after {
+      opacity: 1;
+    }
+  }
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  color: rgb(var(--font-color-white));
+}
