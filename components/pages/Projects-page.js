@@ -1,7 +1,7 @@
 import "../ui/Card.js";
 import "../ui/Chip.js";
 import "../sections/projects/Project-list.js";
-import "../sections/projects/UpcomingProjects.js";
+import "../sections/projects/Upcoming-projects.js";
 
 class ProjectsPage extends HTMLElement {
   constructor() {
