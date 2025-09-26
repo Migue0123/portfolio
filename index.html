@@ -3,88 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portafolio</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta
+      name="description"
+      content="Portafolio creado por Miguel Higuita para mostrar sus habilidades como programador"
+    />
+    <!-- Favicon básico -->
+    <link rel="icon" type="image/x-icon" href="/public/favicon/favicon.ico" />
+    <!-- PNG para navegadores modernos -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/public/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/public/favicon/favicon-16x16.png"
+    />
+    <!-- Apple Devices -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/public/favicon/apple-touch-icon.png"
+    />
+    <!-- Android -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/public/favicon/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/public/favicon/android-chrome-512x512.png"
+    />
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/public/favicon/site.webmanifest" />
+
+    <title>Miguel Higuita - Portafolio</title>
+    <link rel="stylesheet" href="./index.css" />
+    <script type="module" src="./index.js"></script>
   </head>
   <body>
     <div class="container">
-      <section class="bio">
-        <img
-          class="bio-image"
-          src="./assets/miguel-higuita.png"
-          alt="Miguel Higuita"
-        />
-        <div class="bio-card">
-          <div class="bio-description">
-            <h1>Miguel Higuita</h1>
-            <p>Hola. Soy <span>desarrollador web.</span></p>
-            <p>Este es un espacio para mostrar mis proyectos y habilidades.</p>
-          </div>
-          <div class="bio-status">
-            <p class="available">
-              <span class="status-point"></span> Disponible para trabajar
-            </p>
-          </div>
-          <div class="bio-links">
-            <a
-              href="https://www.linkedin.com/in/miguelhiguita/"
-              target="_blank"
-            >
-              <svg class="icon">
-                <use href="sprite.svg#linkedin"></use>
-              </svg>
-            </a>
-            <a href="https://github.com/Migue0123" target="_blank">
-              <svg class="icon">
-                <use href="sprite.svg#github"></use>
-              </svg>
-            </a>
-            <a href="mailto:higuita1900@gmail.com" target="_blank">
-              <svg class="icon">
-                <use href="sprite.svg#mail"></use>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section class="content">
-        <div class="card">
-          <svg class="icon-card">
-            <use href="./sprite.svg#external-link"></use>
-          </svg>
-        </div>
-        <div class="card">
-          <svg class="icon">
-            <use href="./sprite.svg#external-link"></use>
-          </svg>
-        </div>
-        <div class="card">
-          <svg class="icon">
-            <use href="./sprite.svg#external-link"></use>
-          </svg>
-        </div>
-      </section>
-
-      <menu class="menu">
-        <ul>
-          <button data-tooltip="Inicio">
-            <svg class="icon">
-              <use href="sprite.svg#home"></use>
-            </svg>
-          </button>
-          <button data-tooltip="Proyectos">
-            <svg class="icon">
-              <use href="sprite.svg#projects"></use>
-            </svg>
-          </button>
-          <button data-tooltip="Contacto">
-            <svg class="icon">
-              <use href="sprite.svg#contact"></use>
-            </svg>
-          </button>
-        </ul>
-      </menu>
+      <app-router></app-router>
     </div>
+    <menu-component></menu-component>
   </body>
 </html>
