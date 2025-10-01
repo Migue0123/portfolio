@@ -11,6 +11,7 @@ class MenuComponent extends HTMLElement {
     return /* css */ `
       .menu {
         display: flex;
+        justify-content: center;
         position: fixed;
         left: 50%;
         bottom: 4%;
@@ -19,13 +20,15 @@ class MenuComponent extends HTMLElement {
         padding: 0.5rem 2rem;
         width: -webkit-fit-content;
         width: -moz-fit-content;
-        width: fit-content;
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
         border: 1.5px solid rgba(var(--color-white), 0.2);
         border-radius: 1rem;
         background-color: rgb(var(--color-white), 10%);
         transform: translateX(-50%);
         -webkit-backdrop-filter: blur(20px);
-                backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
         transition: all 0.6s ease;
 
         &:hover {
@@ -37,7 +40,7 @@ class MenuComponent extends HTMLElement {
           flex-wrap: wrap;
           place-content: center;
           -moz-column-gap: 1.25rem;
-              column-gap: 1.25rem;
+          column-gap: 1.25rem;
           position: relative;
 
           .option-menu {
@@ -47,6 +50,11 @@ class MenuComponent extends HTMLElement {
               translate: 0px -12px;
             }
           }
+        }
+
+        @media (width <= 425px) {
+          width: 100%;
+          bottom: 0;
         }
       }
     `;
