@@ -12,14 +12,14 @@ class Header extends HTMLElement {
       .bio-header {
         display: flex;
         justify-content: center;
-        align-items: start;
+        align-items: flex-start;
         width: 100%;
         height: -webkit-fit-content;
         height: -moz-fit-content;
         height: fit-content;
         padding-bottom: 6rem;
         -moz-column-gap: 2rem;
-            column-gap: 2rem;
+        column-gap: 2rem;
 
         img {
           width: 11rem;
@@ -28,9 +28,12 @@ class Header extends HTMLElement {
 
         .bio-image {
           -webkit-filter: var(--drop-shadow);
-                  filter: var(--drop-shadow);
-          -webkit-mask-image: linear-gradient(rgb(var(--color-dark)) 60%, transparent);
-                  mask-image: linear-gradient(rgb(var(--color-dark)) 60%, transparent);
+          filter: var(--drop-shadow);
+          -webkit-mask-image: linear-gradient(
+            rgb(var(--color-dark)) 60%,
+            transparent
+          );
+          mask-image: linear-gradient(rgb(var(--color-dark)) 60%, transparent);
           border-radius: 100%;
           background-color: rgb(var(--color-sky));
 
@@ -53,7 +56,7 @@ class Header extends HTMLElement {
           display: flex;
           align-items: center;
           -moz-column-gap: 0.6rem;
-              column-gap: 0.6rem;
+          column-gap: 0.6rem;
           margin-top: 1rem;
           width: -webkit-fit-content;
           width: -moz-fit-content;
@@ -70,6 +73,17 @@ class Header extends HTMLElement {
             height: 0.5rem;
             border-radius: 50%;
             background-color: rgb(var(--status-available));
+          }
+        }
+
+        @media (width <= 768px) {
+          flex-direction: column;
+          text-align: center;
+          align-items: center;
+          padding: 0 1rem 6rem;
+
+          .bio-card {
+            display: contents;
           }
         }
       }
