@@ -43,7 +43,7 @@ class Content extends HTMLElement {
               transform: scale(1.2);
               color: rgb(var(--color-sky));
               -webkit-filter: var(--drop-shadow-small);
-                      filter: var(--drop-shadow-small);
+              filter: var(--drop-shadow-small);
             }
 
             &:active {
@@ -59,25 +59,27 @@ class Content extends HTMLElement {
         .projects-card {
           display: grid;
           place-content: center;
+          justify-items: center;
           height: 100%;
+          padding: 1rem;
 
           .card-image {
-            width: 19rem;
-            height: 12rem;
+            width: 90%;
+            height: 100%;
             transition: all 0.6s ease;
 
             &:hover {
               -webkit-filter: drop-shadow(0 0 1.5rem rgb(var(--color-white), 20%));
-                      filter: drop-shadow(0 0 1.5rem rgb(var(--color-white), 20%));
+              filter: drop-shadow(0 0 1.5rem rgb(var(--color-white), 20%));
             }
           }
 
           img {
             -o-object-fit: cover;
-              object-fit: cover;
-            width: 100%;
-            height: 100%;
+            object-fit: cover;
             border-radius: 1rem;
+            max-width: 100%;
+            height: auto;
           }
 
           .card-image-1 {
@@ -100,13 +102,13 @@ class Content extends HTMLElement {
 
           .download {
             display: flex;
-            justify-content: end;
+            justify-content: flex-end;
 
             a {
               display: flex;
               align-items: center;
               -moz-column-gap: 0.5rem;
-                  column-gap: 0.5rem;
+              column-gap: 0.5rem;
               width: -webkit-fit-content;
               width: -moz-fit-content;
               width: fit-content;
@@ -126,7 +128,7 @@ class Content extends HTMLElement {
 
               &:hover {
                 -webkit-filter: var(--drop-shadow);
-                        filter: var(--drop-shadow);
+                filter: var(--drop-shadow);
                 border: 1px solid rgba(var(--color-white), 0.4);
                 transform: scale(1.05);
                 color: rgb(var(--color-sky));
@@ -159,7 +161,7 @@ class Content extends HTMLElement {
             &:hover {
               transform: scale(1.2);
               -webkit-filter: var(--drop-shadow);
-                      filter: var(--drop-shadow);
+              filter: var(--drop-shadow);
             }
           }
 
@@ -167,7 +169,28 @@ class Content extends HTMLElement {
             display: flex;
             place-content: center;
             -moz-column-gap: 2rem;
-                column-gap: 2rem;
+            column-gap: 2rem;
+          }
+        }
+
+        @media (width <= 768px) {
+          grid-template-columns: repeat(1, 1fr);
+          grid-template-rows: auto;
+          gap: 2rem;
+          padding: 0 1rem;
+
+          .card-main {
+            grid-row: auto;
+          }
+
+          .card-image {
+            width: 70%;
+          }
+
+          .tools {
+            .tools-icons {
+              justify-content: space-around;
+            }
           }
         }
       }
