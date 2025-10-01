@@ -12,6 +12,7 @@ class UpcomingProjects extends HTMLElement {
         align-items: center;
         padding: 2rem;
         row-gap: 2.5rem;
+        text-align: center;
 
         .description {
           display: contents;
@@ -41,7 +42,7 @@ class UpcomingProjects extends HTMLElement {
       </style>
       <card-component>
         <div class="upcoming-projects">
-          <h2>Próximos proyectos en construcción</h2>
+          <h5>Próximos proyectos en construcción</h5>
           <div class="description">
             <svg class="icon">
               <use href="/public/svg/sprite.svg#building"></use>

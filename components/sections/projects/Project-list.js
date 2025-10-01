@@ -33,18 +33,16 @@ class ProjectList extends HTMLElement {
 
         img {
           width: 100%;
-          height: 12rem;
+          height: 100%;
           padding: 0.5rem;
           border-radius: 1rem;
           -o-object-fit: cover;
-            object-fit: cover;
+          object-fit: cover;
           -webkit-filter: var(--drop-shadow-small);
-                  filter: var(--drop-shadow-small);
+          filter: var(--drop-shadow-small);
         }
 
         .project-title {
-          font-size: 1.2em;
-          font-weight: 700;
           display: flex;
           justify-content: center;
         }
@@ -83,10 +81,16 @@ class ProjectList extends HTMLElement {
             .pill-container {
               display: flex;
               -moz-column-gap: 1rem;
-                  column-gap: 1rem;
+              column-gap: 1rem;
               margin-top: 1rem;
             }
           }
+        }
+      }
+
+      @media (width <= 768px) {
+        .projects-list {
+          grid-template-columns: repeat(1, 1fr);
         }
       }
     `;
@@ -105,7 +109,7 @@ class ProjectList extends HTMLElement {
       <section class="projects-list">
         <card-component>
           <div class="project-card">
-            <h2 class="project-title">Jhonvolt</h2>
+            <h5 class="project-title">Jhonvolt</h5>
             <optimized-image src="jhonvolt" alt="Jhonvolt"></optimized-image>
             <div class="project-pill-container">
               <chip-component variant="private">Privado</chip-component>
@@ -133,7 +137,7 @@ class ProjectList extends HTMLElement {
         </card-component>
         <card-component>
           <div class="project-card">
-            <h2 class="project-title">Cotizador CP</h2>
+            <h5 class="project-title">Cotizador CP</h5>
             <optimized-image src="cotizador" alt="Cotizador CP"></optimized-image>
             <div class="project-pill-container">
               <chip-component variant="private">Privado</chip-component>
