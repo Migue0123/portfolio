@@ -47,6 +47,10 @@ body {
   color: rgb(var(--color-white));
   display: flex;
   justify-content: center;
+
+  @media (width <= 768px) {
+    background-attachment: scroll;
+  }
 }
 
 h1,
