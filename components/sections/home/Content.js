@@ -123,6 +123,7 @@ class Content extends HTMLElement {
               transition: all 0.6s ease;
 
               .icon {
+                max-width: 100%;
                 transition: all 0.6s ease;
               }
 

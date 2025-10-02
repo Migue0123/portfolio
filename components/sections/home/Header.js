@@ -11,6 +11,7 @@ class Header extends HTMLElement {
     return /* css */ `
       .bio-header {
         display: flex;
+        box-sizing: border-box;
         justify-content: center;
         align-items: flex-start;
         width: 100%;

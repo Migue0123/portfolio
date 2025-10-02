@@ -12,8 +12,8 @@ class About extends HTMLElement {
       .content {
         display: flex;
         flex-direction: row-reverse;
-        gap: 2rem;
         align-items: center;
+        gap: 2rem;
 
         .title {
           display: inline-block;
@@ -28,7 +28,8 @@ class About extends HTMLElement {
 
       img {
         width: 20rem;
-        height: 20rem;
+        max-width: 20rem;
+        height: auto;
         transform: rotateY(180deg);
         border-radius: 2rem;
         background-color: rgb(var(--color-sky));
@@ -43,6 +44,12 @@ class About extends HTMLElement {
       @media (width <= 768px) {
         .content {
           flex-direction: column;
+        }
+
+        img {
+          width: 100%;
+          max-width: 20rem;
+          height: auto;
         }
       }
     `;
