@@ -32,41 +32,45 @@ class ButtonIcon extends HTMLElement {
           transition: all 0.6s ease;
         }
 
-        &:hover {
-          -webkit-filter: var(--drop-shadow);
-                  filter: var(--drop-shadow);
-          border: 1px solid rgba(var(--color-white), 0.4);
-          transform: scale(1.2);
-          color: rgb(var(--color-sky));
-          border-color: rgb(var(--color-sky));
-
-          ::slotted(svg) {
+        
+        
+        @media (hover: hover) and (pointer: fine) {
+          &:hover {
+            -webkit-filter: var(--drop-shadow);
+                    filter: var(--drop-shadow);
+            border: 1px solid rgba(var(--color-white), 0.4);
+            transform: scale(1.2);
             color: rgb(var(--color-sky));
+            border-color: rgb(var(--color-sky));
+  
+            ::slotted(svg) {
+              color: rgb(var(--color-sky));
+            }
           }
-        }
+          
+          &:active {
+            transform: scale(1.01);
+          }
 
-        &:active {
-          transform: scale(1.01);
-        }
-
-        &::after {
-          content: attr(data-tooltip);
-          position: absolute;
-          top: -70%;
-          left: 50%;
-          transform: translateX(-50%);
-          background-color: rgb(var(--color-gray));
-          color: rgb(var(--color-sky));
-          padding: 0.25rem 0.5rem;
-          border: 1px solid rgba(var(--color-white), 0.2);
-          border-radius: 0.25rem;
-          font-size: 0.75em;
-          opacity: 0;
-          transition: opacity 0.6s ease;
-        }
-
-        &:hover::after {
-          opacity: 1;
+          &::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            top: -70%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgb(var(--color-gray));
+            color: rgb(var(--color-sky));
+            padding: 0.25rem 0.5rem;
+            border: 1px solid rgba(var(--color-white), 0.2);
+            border-radius: 0.25rem;
+            font-size: 0.75em;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+          }
+  
+          &:hover::after {
+            opacity: 1;
+          } 
         }
 
         &[data-tooltip=""]::after {

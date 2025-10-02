@@ -31,8 +31,10 @@ class MenuComponent extends HTMLElement {
         backdrop-filter: blur(20px);
         transition: all 0.6s ease;
 
-        &:hover {
-          transform: translateX(-50%) scale(1.05);
+        @media (hover: hover) and (pointer: fine) {
+          &:hover {
+            transform: translateX(-50%) scale(1.05);
+          }
         }
 
         .social-links {
@@ -46,8 +48,10 @@ class MenuComponent extends HTMLElement {
           .option-menu {
             transition: all 0.6s ease;
 
-            &:hover {
-              translate: 0px -12px;
+            @media (hover: hover) and (pointer: fine) {
+              &:hover {
+                translate: 0px -12px;
+              }
             }
           }
         }
