@@ -243,7 +243,7 @@ class Content extends HTMLElement {
               <p>Desarrollador Frontend</p>
               <p>Desarrollo de aplicaciones web para dar solución y agilizar procesos del sector eléctrico.</p>
               <div class="download">
-                <a href="/public/downloads/cv.pdf" target="_blank">
+                <a href="/public/downloads/CV-Miguel-Higuita.pdf" target="_blank">
                   <svg class="icon">
                     <use href="/public/svg/sprite.svg#download"></use>
                   </svg>
